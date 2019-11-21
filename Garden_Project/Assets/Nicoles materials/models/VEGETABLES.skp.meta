@@ -3,12 +3,32 @@ guid: 0bf5cd8fcda76604fa4db1bec767908c
 SketchUpImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pechay
+    second: {fileID: 2100000, guid: f8001f6d79ff64649a610dea73ce416b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _defaultMat
+    second: {fileID: 2100000, guid: 86c00e21871e0264aaafbb96dc2b8f20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cabbage-soup-diet-1
+    second: {fileID: 2100000, guid: 0752f6fa78318d140a9e5f7fa7b7deff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: th (1)
+    second: {fileID: 2100000, guid: 269aa450cb599be4dacc07f7f287112e, type: 2}
   materials:
     importMaterials: 1
     materialName: 2
     materialSearch: 0
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -41,7 +61,7 @@ SketchUpImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
+    importCameras: 0
     importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
