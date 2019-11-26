@@ -17,6 +17,7 @@ public class growplant : MonoBehaviour
     public float x = 1;
     public float y = 1;
     public float z = 1;
+    private bool plantIsHere = false; 
     GameObject general;
     GameObject general2;
 
@@ -39,7 +40,7 @@ public class growplant : MonoBehaviour
             general.SetActive(true);
         }
 
-        if (timer2 > waitTime2)
+        if (timer > waitTime2)
         {
             Debug.Log("in the if");
             general.SetActive(false);
@@ -68,17 +69,24 @@ public class growplant : MonoBehaviour
         if (ground.gameObject.name == "dirt")
         {
             //If the GameObject's name matches the one you suggest, output this message in the console
-            Debug.Log("Do something here");
+          //  Debug.Log("Do something here");
 
         }
 
+
         //Check for a match with the specific tag on any GameObject that collides with your GameObject
-        if (ground.gameObject.tag == "box")
+        if (ground.gameObject.tag == "box" && plantIsHere == false) 
         {
             //If the GameObject has the same tag as specified, output this message in the console
             Debug.Log("Do something else here");
             general = babyCab;
             general2 = cabbage;
+            //Destroy(GameObject.FindWithTag("box"));
+            GameObject tmp = GameObject.FindWithTag("box");
+            Destroy(tmp);
+            plantIsHere = true; 
+       
+
             timer = 0.0f;
             timer2 = 0.0f;
 }
