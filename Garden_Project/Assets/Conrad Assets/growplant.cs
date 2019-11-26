@@ -4,63 +4,93 @@ using UnityEngine;
 
 public class growplant : MonoBehaviour
 {
+    public int m = 1;
     public GameObject cabbage;
-    public GameObject babyCab;
+    public GameObject littlecab;
+    public GameObject seedling;
+
     //public GameObject lettuse;
     //public GameObject flower1;
     /// public GameObject pumpkin;
     public GameObject ground;
     public float waitTime = 3.0f;
     public float waitTime2 = 10.0f;
+    public float waitTime3 = 15.0f;
     private float timer = 0.0f;
     private float timer2 = 0.0f;
     public float x = 1;
     public float y = 1;
     public float z = 1;
-    private bool plantIsHere = false; 
+    private bool plantIsHere = false;
+    private bool isWatered = false;
+    private bool plantIsAlive = false;
+
+    private bool phase1 = false;
+    private bool phase2 = false;
+    private bool phase3 = false;
+
+
     GameObject general;
     GameObject general2;
+    GameObject general3;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        waitTime = waitTime * m;
+        waitTime2 = waitTime2 * m;
     }
 
     // Update is called once per frame
     void Update()
     {
+
         timer += Time.deltaTime;
         timer2 += Time.deltaTime;
 
-        if (timer > waitTime)
+        if (timer > waitTime && phase1 == false && phase3 == false)
         {
             Debug.Log("in the plant");
             //plantGrow();
             general.SetActive(true);
+            phase1 = true; 
         }
 
-        if (timer > waitTime2)
+
+        if (timer > waitTime2 && phase1 == true && phase3 == false )
         {
-            Debug.Log("in the if");
+
+            Debug.Log("wait time 2");
             general.SetActive(false);
             general2.SetActive(true);
             //plantGrow();
 
         }
 
-        if (timer2 > waitTime2*2)
+
+        if (timer > waitTime3)
         {
-            Debug.Log("in the if");
-            plantGrow(general2);
+            Debug.Log("wait time 3");
+            general2.SetActive(false);
+            general3.SetActive(true);
+            phase3 = true;
+            //plantGrow();
+            var cubeRenderer = general3.GetComponent<Renderer>();
+            cubeRenderer.material.color = new Color(1, 1, 1);
 
         }
 
+
+        if (isWatered == false && plantIsAlive == false)
+        {
+            var cubeRenderer = general2.GetComponent<Renderer>();
+
+            //Call SetColor using the shader property name "_Color" and setting the color to red
+            cubeRenderer.material.SetColor("_Color", Color.red);
+        }
+
     }
-    public void plantGrow(GameObject plant)
-    {
-        plant.transform.localScale = new Vector3(x + 1, y + 2, z + 1);
-    }
+
 
 
     void OnCollisionEnter(Collision ground)
@@ -69,27 +99,32 @@ public class growplant : MonoBehaviour
         if (ground.gameObject.name == "dirt")
         {
             //If the GameObject's name matches the one you suggest, output this message in the console
-          //  Debug.Log("Do something here");
+            //  Debug.Log("Do something here");
 
         }
 
 
         //Check for a match with the specific tag on any GameObject that collides with your GameObject
-        if (ground.gameObject.tag == "box" && plantIsHere == false) 
+        if (ground.gameObject.tag == "box" && plantIsHere == false)
         {
             //If the GameObject has the same tag as specified, output this message in the console
             Debug.Log("Do something else here");
-            general = babyCab;
-            general2 = cabbage;
+            general = seedling;
+            general2 = littlecab;
+            general3 = cabbage;
+
             //Destroy(GameObject.FindWithTag("box"));
             GameObject tmp = GameObject.FindWithTag("box");
             Destroy(tmp);
-            plantIsHere = true; 
-       
+
+            plantIsHere = true;
+            plantIsAlive = true;
 
             timer = 0.0f;
             timer2 = 0.0f;
-}
-        Debug.Log("someting did touch it");
+        }
+
+        //Debug.Log("someting did touch it");
     }
+
 }
