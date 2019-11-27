@@ -8,6 +8,11 @@ TagManager:
   - dirt
   - box
   - seed
+  - water
+  - floor
+  - shovel
+  - bucket
+  - compost
   layers:
   - Default
   - TransparentFX

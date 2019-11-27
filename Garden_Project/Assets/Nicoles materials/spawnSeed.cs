@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class spawnSeed : MonoBehaviour
 {
+ 
     public GameObject seed;
     public Transform seed2;
     public float x=0;
@@ -31,7 +32,8 @@ public class spawnSeed : MonoBehaviour
 
         if (timer > waitTime)
         {
-           // seed.SetActive(true);
+           
+            // seed.SetActive(true);
             Instantiate(seed2, new Vector3(x, y, z), Quaternion.identity);
             timer = 0;
         }

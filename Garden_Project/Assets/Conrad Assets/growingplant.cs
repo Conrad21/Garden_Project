@@ -162,7 +162,15 @@ public class growingplant : MonoBehaviour
 
         }
 
-      
+
+        if (ground.gameObject.tag == "shovel")
+        {
+            general.SetActive(false);
+            general2.SetActive(false);
+            general3.SetActive(false);
+            Debug.Log("Plant is gone");
+        }
+
        // Debug.Log("someting growing did touch it");
     }
 
