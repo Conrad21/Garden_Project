@@ -18,7 +18,7 @@ public class growingplant : MonoBehaviour
     public float waitTime = 3.0f;
     public float waitTime2 = 10.0f;
     public float waitTime3 = 15.0f;
-    public float waitwater = 60.0f;
+    public float waitwater = 120.0f;
     private float timer = 0.0f;
     private float timer2 = 0.0f;
     public float x = 1;
@@ -31,7 +31,10 @@ public class growingplant : MonoBehaviour
     private bool phase1 = false;
     private bool phase2 = false;
     private bool phase3 = false;
+    private bool phase4 = false;
+    private bool waterflag = false;
     private int flag = 0;
+  
 
 
     GameObject general;
@@ -83,25 +86,36 @@ public class growingplant : MonoBehaviour
         }
 
 
-        if (timer > waitTime3)
+        if (timer > waitTime3 && phase3 == false)
         {
             Debug.Log("wait time 3");
             general2.SetActive(false);
             general3.SetActive(true);
             phase3 = true;
+            phase4 = true;
             //plantGrow();
             var cubeRenderer = general3.GetComponent<Renderer>();
             cubeRenderer.material.color = new Color(1, 1, 1);
 
         }
 
+        if (timer2 > waitwater && waterflag == false)
+        {
+            Debug.Log("you did not water the plant :( ");
+            waterflag = true; 
+
+
+
+
+        }
+
 
         if (isWatered == false && plantIsAlive == false)
         {
-            var cubeRenderer = general2.GetComponent<Renderer>();
+          //  var cubeRenderer = general2.GetComponent<Renderer>();
 
             //Call SetColor using the shader property name "_Color" and setting the color to red
-            cubeRenderer.material.SetColor("_Color", Color.red);
+           // cubeRenderer.material.SetColor("_Color", Color.red);
         }
     }
 
@@ -120,7 +134,7 @@ public class growingplant : MonoBehaviour
         if (ground.gameObject.tag == "seed" && plantIsHere == false)
         {
             //If the GameObject has the same tag as specified, output this message in the console
-            Debug.Log("Do something else here");
+            Debug.Log("Seed as been planted");
             general = seedling;
             general2 = littlecab;
             general3 = cabbage;
@@ -142,17 +156,13 @@ public class growingplant : MonoBehaviour
         if (ground.gameObject.tag == "water")
         {
             //If the GameObject's name matches the one you suggest, output this message in the console
-            Debug.Log("The tag water touched it");
+            Debug.Log("Plant is watered");
+            timer2 = 0.0f;
+
 
         }
 
-        if (ground.gameObject.name == "water")
-        {
-            //If the GameObject's name matches the one you suggest, output this message in the console
-            Debug.Log("object named water touched it");
-
-        }
-
+      
        // Debug.Log("someting growing did touch it");
     }
 
