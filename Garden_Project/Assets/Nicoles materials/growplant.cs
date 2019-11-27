@@ -34,7 +34,7 @@ public class growplant : MonoBehaviour
 
         if (timer > waitTime)
         {
-            Debug.Log("in the plant");
+            //Debug.Log("in the plant");
             //plantGrow();
             general.SetActive(true);
         }
@@ -82,6 +82,6 @@ public class growplant : MonoBehaviour
             timer = 0.0f;
             timer2 = 0.0f;
 }
-        Debug.Log("someting did touch it");
+        Debug.Log("someting growplant did touch it");
     }
 }

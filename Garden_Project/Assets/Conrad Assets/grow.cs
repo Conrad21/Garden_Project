@@ -31,7 +31,7 @@ public class grow : MonoBehaviour
 
         if (timer > waitTime)
         {
-            Debug.Log("in the if");
+            //Debug.Log("in the if");
             timer = timer - waitTime;
             plantGrow();
 

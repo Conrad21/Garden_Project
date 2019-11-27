@@ -31,6 +31,7 @@ public class growingplant : MonoBehaviour
     private bool phase1 = false;
     private bool phase2 = false;
     private bool phase3 = false;
+    private int flag = 0;
 
 
     GameObject general;
@@ -52,15 +53,19 @@ public class growingplant : MonoBehaviour
         timer2 += Time.deltaTime;
 
 
-        //if (timer2 > waitwater)
-        //{
-
-        //}
+        if (flag == 1){
+            PlantThing(); }
 
 
+
+
+
+    }
+
+    void PlantThing() {
         if (timer > waitTime && phase1 == false && phase3 == false)
         {
-            Debug.Log("in the plant");
+            //Debug.Log("in the plant");
             //plantGrow();
             general.SetActive(true);
             phase1 = true;
@@ -98,10 +103,7 @@ public class growingplant : MonoBehaviour
             //Call SetColor using the shader property name "_Color" and setting the color to red
             cubeRenderer.material.SetColor("_Color", Color.red);
         }
-
     }
-
-
 
     void OnCollisionEnter(Collision ground)
     {
@@ -132,9 +134,10 @@ public class growingplant : MonoBehaviour
 
             timer = 0.0f;
             timer2 = 0.0f;
+            flag = 1;
         }
 
-        //Debug.Log("someting did touch it");
+        Debug.Log("someting growing did touch it");
     }
 
 }
