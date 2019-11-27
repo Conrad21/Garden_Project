@@ -13,6 +13,8 @@ TagManager:
   - shovel
   - bucket
   - compost
+  - hole
+  - compostBin
   layers:
   - Default
   - TransparentFX

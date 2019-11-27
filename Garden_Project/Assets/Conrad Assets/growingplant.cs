@@ -10,7 +10,7 @@ public class growingplant : MonoBehaviour
     public GameObject cabbage;
     public GameObject littlecab;
     public GameObject seedling;
-
+    public GameObject hole;
     //public GameObject lettuse;
     //public GameObject flower1;
     /// public GameObject pumpkin;
@@ -27,11 +27,14 @@ public class growingplant : MonoBehaviour
     private bool plantIsHere = false;
     private bool isWatered = false;
     private bool plantIsAlive = false;
+    
+
 
     private bool phase1 = false;
     private bool phase2 = false;
     private bool phase3 = false;
     private bool phase4 = false;
+    private bool holeIsHere = false; 
     private bool waterflag = false;
     private int flag = 0;
   
@@ -131,7 +134,7 @@ public class growingplant : MonoBehaviour
 
 
         //Check for a match with the specific tag on any GameObject that collides with your GameObject
-        if (ground.gameObject.tag == "seed" && plantIsHere == false)
+        if (ground.gameObject.tag == "seed" && plantIsHere == false && holeIsHere == true)
         {
             //If the GameObject has the same tag as specified, output this message in the console
             Debug.Log("Seed as been planted");
@@ -142,7 +145,7 @@ public class growingplant : MonoBehaviour
             //Destroy(GameObject.FindWithTag("box"));
             GameObject tmp = GameObject.FindWithTag("seed");
             Destroy(tmp);
-
+            hole.SetActive(false);
             plantIsHere = true;
             plantIsAlive = true;
 
@@ -165,10 +168,11 @@ public class growingplant : MonoBehaviour
 
         if (ground.gameObject.tag == "shovel")
         {
-            general.SetActive(false);
-            general2.SetActive(false);
-            general3.SetActive(false);
-            Debug.Log("Plant is gone");
+           if(plantIsHere == false && holeIsHere == false)
+            {
+                holeIsHere = true; 
+                hole.SetActive(true);
+            }
         }
 
        // Debug.Log("someting growing did touch it");
