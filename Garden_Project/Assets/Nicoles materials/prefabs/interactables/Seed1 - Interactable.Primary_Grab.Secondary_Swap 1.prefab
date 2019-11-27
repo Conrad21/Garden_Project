@@ -392,7 +392,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe1a4e7491ae8a47a7bc404ac5c52e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioData: {fileID: 0}
   seed: {fileID: 0}
   seed2: {fileID: 0}
   x: 0
@@ -537,7 +536,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe1a4e7491ae8a47a7bc404ac5c52e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioData: {fileID: 0}
   seed: {fileID: 0}
   seed2: {fileID: 0}
   x: 0
