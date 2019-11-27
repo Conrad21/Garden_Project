@@ -137,7 +137,23 @@ public class growingplant : MonoBehaviour
             flag = 1;
         }
 
-        Debug.Log("someting growing did touch it");
+
+
+        if (ground.gameObject.tag == "water")
+        {
+            //If the GameObject's name matches the one you suggest, output this message in the console
+            Debug.Log("The tag water touched it");
+
+        }
+
+        if (ground.gameObject.name == "water")
+        {
+            //If the GameObject's name matches the one you suggest, output this message in the console
+            Debug.Log("object named water touched it");
+
+        }
+
+       // Debug.Log("someting growing did touch it");
     }
 
 }
