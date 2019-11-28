@@ -11,10 +11,11 @@ public class growingplant : MonoBehaviour
     public GameObject littlecab;
     public GameObject seedling;
     public GameObject hole;
+    public GameObject deadplant; 
     //public GameObject lettuse;
     //public GameObject flower1;
     /// public GameObject pumpkin;
-    public GameObject ground;
+  //  public GameObject ground;
     public float waitTime = 3.0f;
     public float waitTime2 = 10.0f;
     public float waitTime3 = 15.0f;
@@ -105,8 +106,11 @@ public class growingplant : MonoBehaviour
         if (timer2 > waitwater && waterflag == false)
         {
             Debug.Log("you did not water the plant :( ");
-            waterflag = true; 
-
+            waterflag = true;
+            general2.SetActive(false);
+            general.SetActive(false);
+            general3.SetActive(false);
+            deadplant.SetActive(true);
 
 
 
@@ -134,7 +138,7 @@ public class growingplant : MonoBehaviour
 
 
         //Check for a match with the specific tag on any GameObject that collides with your GameObject
-        if (ground.gameObject.tag == "seed" && plantIsHere == false && holeIsHere == true)
+        if (ground.gameObject.tag == "seed_cabbage" && plantIsHere == false && holeIsHere == true)
         {
             //If the GameObject has the same tag as specified, output this message in the console
             Debug.Log("Seed as been planted");
