@@ -140,8 +140,8 @@ GameObject:
   - component: {fileID: 1110874771735145502}
   - component: {fileID: 3486424805206073574}
   m_Layer: 0
-  m_Name: Seed3 - Interactable.Primary_Grab.Secondary_Swap 2
-  m_TagString: seed_pumpkin
+  m_Name: Seed7- Interactable.Primary_Grab.Secondary_Swap 6
+  m_TagString: seed_whiteMushroom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -472,7 +472,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 52af15eb663ca0b489f701eb6a53c306, type: 2}
+  - {fileID: 2100000, guid: 7bb7aefd5879c3144b5c0a11f2f292e8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

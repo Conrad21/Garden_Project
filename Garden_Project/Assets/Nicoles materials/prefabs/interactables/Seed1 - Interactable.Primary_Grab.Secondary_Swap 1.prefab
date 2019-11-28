@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3486424805206073574}
   m_Layer: 0
   m_Name: Seed1 - Interactable.Primary_Grab.Secondary_Swap 1
-  m_TagString: seed
+  m_TagString: seed_blueFlower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
