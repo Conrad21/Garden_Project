@@ -9,6 +9,7 @@ public class bucket_code : MonoBehaviour
     public GameObject compost1;
     public GameObject compost2;
     public GameObject compost3;
+
     public int counter = 0; 
     // Start is called before the first frame update
     void Start()
