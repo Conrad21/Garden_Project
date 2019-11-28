@@ -15,6 +15,16 @@ TagManager:
   - compost
   - hole
   - compostBin
+  - weed
+  - seed_blueFlower
+  - seed_purpleFlower
+  - seed_cabbage
+  - seed_bokchoy
+  - seed_pumpkin
+  - seed_sunflower
+  - seed_whiteMushroom
+  - seed_Carrot
+  - seed_caladium
   layers:
   - Default
   - TransparentFX
