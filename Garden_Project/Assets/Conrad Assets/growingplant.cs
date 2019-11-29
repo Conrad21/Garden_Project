@@ -184,9 +184,10 @@ public class growingplant : MonoBehaviour
 
             Destroy(ground.gameObject);
             hole.SetActive(false);
+
             plantIsHere = true;
             plantIsAlive = true;
-
+            holeIsHere = false;
             timer = 0.0f;
             timer2 = 0.0f;
             flag = 1;
@@ -204,7 +205,7 @@ public class growingplant : MonoBehaviour
             hole.SetActive(false);
             plantIsHere = true;
             plantIsAlive = true;
-
+            holeIsHere = false;
             timer = 0.0f;
             timer2 = 0.0f;
             flag = 1;
@@ -223,7 +224,7 @@ public class growingplant : MonoBehaviour
             hole.SetActive(false);
             plantIsHere = true;
             plantIsAlive = true;
-
+            holeIsHere = false;
             timer = 0.0f;
             timer2 = 0.0f;
             flag = 1;
@@ -236,7 +237,7 @@ public class growingplant : MonoBehaviour
             general = seedling;
             general2 = smallSunflower;
             general3 = sunflower;
-
+            holeIsHere = false;
             Destroy(ground.gameObject);
             hole.SetActive(false);
             plantIsHere = true;
@@ -254,7 +255,7 @@ public class growingplant : MonoBehaviour
             general = seedling;
             general2 = smallpurpleflowers;
             general3 = purpleFlower;
-
+            holeIsHere = false;
             Destroy(ground.gameObject);
             hole.SetActive(false);
             plantIsHere = true;
@@ -272,7 +273,7 @@ public class growingplant : MonoBehaviour
             general = seedling;
             general2 = smallCaladium;
             general3 = caladium;
-
+            holeIsHere = false;
             Destroy(ground.gameObject);
             hole.SetActive(false);
             plantIsHere = true;
@@ -290,7 +291,7 @@ public class growingplant : MonoBehaviour
             general = seedling;
             general2 = smallmushroom;
             general3 = mushroom;
-
+            holeIsHere = false;
             Destroy(ground.gameObject);
             hole.SetActive(false);
             plantIsHere = true;
@@ -308,7 +309,7 @@ public class growingplant : MonoBehaviour
             general = seedling;
             general2 = smallBocchoy;
             general3 = Bocchoy;
-
+            holeIsHere = false;
             Destroy(ground.gameObject);
             hole.SetActive(false);
             plantIsHere = true;
@@ -351,6 +352,22 @@ public class growingplant : MonoBehaviour
                 waitTime = waitTime * compostSpeedUp;
                 compflag.SetActive(true);
               
+            }
+
+        }
+
+        if (ground.gameObject.tag == "sheer")
+        {
+            Debug.Log("sheers");
+            if (plantIsHere == true)
+            {
+                general2.SetActive(false);
+                general.SetActive(false);
+                general3.SetActive(false);
+                deadplant.SetActive(false);
+                compflag.SetActive(false);
+                plantIsHere = false;
+
             }
         }
 
