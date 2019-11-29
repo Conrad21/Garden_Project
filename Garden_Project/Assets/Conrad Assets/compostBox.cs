@@ -14,6 +14,9 @@ public class compostBox : MonoBehaviour
     public GameObject compostsmall;
     public GameObject compostmed;
     public GameObject compostbig;
+    public GameObject shovelcompost;
+    public GameObject readyShovelcompost;
+
     //  public GameObject compostsound;
     public int counter = 0;
     public AudioClip AudioClip;
@@ -56,7 +59,10 @@ public class compostBox : MonoBehaviour
 
         }
 
-
+        if (c.gameObject.tag == "shovel" && !readyShovelcompost.activeInHierarchy)
+        {
+            readyShovelcompost.SetActive(true);
+        }
     }
 
     void updateCompost()
