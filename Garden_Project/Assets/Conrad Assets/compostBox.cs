@@ -16,7 +16,7 @@ public class compostBox : MonoBehaviour
     public GameObject compostbig;
     public GameObject shovelcompost;
     public GameObject readyShovelcompost;
-
+    private int flag = 0; 
     //  public GameObject compostsound;
     public int counter = 0;
     public AudioClip AudioClip;
@@ -39,8 +39,12 @@ public class compostBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         timer += Time.deltaTime;
-        updateCompost(); 
+        if (flag == 1)
+        {
+            updateCompost();
+        }
     }
 
     void OnCollisionEnter(Collision c)
@@ -48,7 +52,7 @@ public class compostBox : MonoBehaviour
        if (c.gameObject.tag == "bucket" && (compost1.activeInHierarchy || compost2.activeInHierarchy || compost3.activeInHierarchy))
         {
             AudioSource.Play();
-
+            flag = 1; 
             counter = counter + 1;
             timer = 0.0f;
             compost1.SetActive(false);
@@ -61,6 +65,7 @@ public class compostBox : MonoBehaviour
 
         if (c.gameObject.tag == "shovel" && !readyShovelcompost.activeInHierarchy && Compostcounter > 0)
         {
+            flag = 1;
             Compostcounter--;
             readyShovelcompost.SetActive(true);
         }
@@ -68,6 +73,72 @@ public class compostBox : MonoBehaviour
 
     void updateCompost()
     {
+   
+
+
+        if(Compostcounter < 1)
+        {
+       
+            Readycompost1.SetActive(false);
+        }
+
+        if (Compostcounter >= 1)
+        {
+            flag = 0;
+            Readycompost1.SetActive(true);
+        }
+
+        else if (Compostcounter > 4 && Compostcounter < 6)
+        {
+            flag = 0;
+            Readycompost1.SetActive(false);
+            Readycompost2.SetActive(true);
+        }
+        else if (Compostcounter >= 6 )
+        {
+            flag = 0;
+            Readycompost1.SetActive(false);
+            Readycompost2.SetActive(false);
+            Readycompost3.SetActive(true);
+        }
+
+        if (counter >= 1 && counter < 3 && (timer > waitTime))
+        {
+            flag = 0;
+            Debug.Log("hhehehe");
+            counter = counter - 1;
+            Compostcounter++; 
+            Readycompost1.SetActive(true);
+     
+            timer = 0.0f;
+        }
+
+        if (counter >= 3 && counter < 6 && (timer > waitTime))
+        {
+           
+            counter = counter - 1;
+            Compostcounter++;
+            Readycompost1.SetActive(false);
+            Readycompost2.SetActive(true);
+ 
+            timer = 0.0f;
+
+        }
+
+        if (counter >= 6 && (timer > waitTime))
+        {
+            flag = 0;
+            Compostcounter++;
+            counter = counter - 1;
+            Readycompost1.SetActive(false);
+            Readycompost2.SetActive(false);
+            Readycompost1.SetActive(true);
+            timer = 0.0f;
+
+
+        }
+
+
 
         if (counter == 0)
         {
@@ -99,61 +170,7 @@ public class compostBox : MonoBehaviour
 
         }
 
-        if(Compostcounter < 1)
-        {
-            Readycompost1.SetActive(false);
-        }
 
-        if (Compostcounter >= 1)
-        {
-            Readycompost1.SetActive(true);
-        }
-
-        else if (Compostcounter > 4 && Compostcounter < 6)
-        {
-            Readycompost1.SetActive(false);
-            Readycompost2.SetActive(true);
-        }
-        else if (Compostcounter >= 6 )
-        {
-            Readycompost1.SetActive(false);
-            Readycompost2.SetActive(false);
-            Readycompost3.SetActive(true);
-        }
-
-        if (counter >= 1 && counter < 3 && (timer > waitTime))
-        {
-            Debug.Log("hhehehe");
-            counter = counter - 1;
-            Compostcounter++; 
-            Readycompost1.SetActive(true);
-     
-            timer = 0.0f;
-        }
-
-        if (counter >= 3 && counter < 6 && (timer > waitTime))
-        {
-
-            counter = counter - 1;
-            Compostcounter++;
-            Readycompost1.SetActive(false);
-            Readycompost2.SetActive(true);
- 
-            timer = 0.0f;
-
-        }
-
-        if (counter >= 6 && (timer > waitTime))
-        {
-            Compostcounter++;
-            counter = counter - 1;
-            Readycompost1.SetActive(false);
-            Readycompost2.SetActive(false);
-            Readycompost1.SetActive(true);
-            timer = 0.0f;
-
-
-        }
     }
 
 }
