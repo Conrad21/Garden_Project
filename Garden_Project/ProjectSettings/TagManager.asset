@@ -26,6 +26,7 @@ TagManager:
   - seed_Carrot
   - seed_caladium
   - sheer
+  - scythe
   layers:
   - Default
   - TransparentFX

@@ -32,6 +32,7 @@ public class growingplant : MonoBehaviour
     public GameObject readyCompost;
     public GameObject smallCarrot;
     public GameObject Carrot;
+  
 
     public float waitTime = 3.0f;
     public float waitTime2 = 10.0f;
@@ -351,7 +352,7 @@ public class growingplant : MonoBehaviour
             {
                 waitTime = waitTime * compostSpeedUp;
                 compflag.SetActive(true);
-              
+                readyCompost.SetActive(false);
             }
 
         }

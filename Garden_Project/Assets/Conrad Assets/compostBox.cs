@@ -25,7 +25,7 @@ public class compostBox : MonoBehaviour
     private float timer = 0.0f;
     public float waitTime = 10.0f;
 
-    private int Compostcounter = 1;
+    private int Compostcounter = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -59,8 +59,9 @@ public class compostBox : MonoBehaviour
 
         }
 
-        if (c.gameObject.tag == "shovel" && !readyShovelcompost.activeInHierarchy)
+        if (c.gameObject.tag == "shovel" && !readyShovelcompost.activeInHierarchy && Compostcounter > 0)
         {
+            Compostcounter--;
             readyShovelcompost.SetActive(true);
         }
     }
@@ -98,11 +99,33 @@ public class compostBox : MonoBehaviour
 
         }
 
+        if(Compostcounter < 1)
+        {
+            Readycompost1.SetActive(false);
+        }
+
+        if (Compostcounter >= 1)
+        {
+            Readycompost1.SetActive(true);
+        }
+
+        else if (Compostcounter > 4 && Compostcounter < 6)
+        {
+            Readycompost1.SetActive(false);
+            Readycompost2.SetActive(true);
+        }
+        else if (Compostcounter >= 6 )
+        {
+            Readycompost1.SetActive(false);
+            Readycompost2.SetActive(false);
+            Readycompost3.SetActive(true);
+        }
 
         if (counter >= 1 && counter < 3 && (timer > waitTime))
         {
             Debug.Log("hhehehe");
             counter = counter - 1;
+            Compostcounter++; 
             Readycompost1.SetActive(true);
      
             timer = 0.0f;
@@ -112,6 +135,7 @@ public class compostBox : MonoBehaviour
         {
 
             counter = counter - 1;
+            Compostcounter++;
             Readycompost1.SetActive(false);
             Readycompost2.SetActive(true);
  
@@ -121,7 +145,7 @@ public class compostBox : MonoBehaviour
 
         if (counter >= 6 && (timer > waitTime))
         {
-
+            Compostcounter++;
             counter = counter - 1;
             Readycompost1.SetActive(false);
             Readycompost2.SetActive(false);
