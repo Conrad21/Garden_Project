@@ -25,6 +25,7 @@ TagManager:
   - seed_whiteMushroom
   - seed_Carrot
   - seed_caladium
+  - sheer
   layers:
   - Default
   - TransparentFX
