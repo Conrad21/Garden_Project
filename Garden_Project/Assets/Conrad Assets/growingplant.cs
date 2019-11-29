@@ -229,7 +229,7 @@ public class growingplant : MonoBehaviour
             flag = 1;
         }
 
-       else if (ground.gameObject.tag == "seed_sunflower " && plantIsHere == false && holeIsHere == true)
+       else if (ground.gameObject.tag == "seed_sunflower" && plantIsHere == false && holeIsHere == true)
         {
             //If the GameObject has the same tag as specified, output this message in the console
             Debug.Log("Seed as been planted");
