@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿  using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +9,7 @@ public class Cutgrass : MonoBehaviour
     public GameObject grass;
     public float waitTime = 20.0f;
     private float timer = 0.0f;
-
+    public AudioSource snipSource;
 
     // Start is called before the first frame update
     void Start()
@@ -34,10 +34,11 @@ public class Cutgrass : MonoBehaviour
 
     void OnCollisionEnter(Collision cutter)
     {
-        Debug.Log(cutter.gameObject.tag);
+        //Debug.Log(cutter.gameObject.tag);
         if (cutter.gameObject.tag == "scythe")
         {
-            Debug.Log("chahahahahaha");
+            snipSource.Play();
+            //Debug.Log("chahahahahaha");
             grass.SetActive(false);
         }
     }
