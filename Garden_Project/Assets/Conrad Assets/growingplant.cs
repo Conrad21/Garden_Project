@@ -7,7 +7,7 @@ public class growingplant : MonoBehaviour
   
 
     public int clockMultiplier = 1;
-    public float compostSpeedUp = .75f;
+    private float compostSpeedUp = 0.75f;
 
     public GameObject compflag; 
     public GameObject cabbage;
@@ -32,11 +32,17 @@ public class growingplant : MonoBehaviour
     public GameObject readyCompost;
     public GameObject smallCarrot;
     public GameObject Carrot;
-  
+
+    public GameObject spawnpoint;
+    public GameObject createdcompost;
+    public Transform compostTrans;
 
     public float waitTime = 3.0f;
     public float waitTime2 = 10.0f;
-    public float waitTime3 = 15.0f;
+    private float waitTime3 = 60.0f;
+    private float compwaitTime = 0f;
+    private float compwaitTime2 = 0f;
+    private float compwaitTime3 = 0;
     public float waitwater = 120.0f;
     private float timer = 0.0f;
     private float timer2 = 0.0f;
@@ -63,6 +69,11 @@ public class growingplant : MonoBehaviour
     {
         waitTime = waitTime * clockMultiplier;
         waitTime2 = waitTime2 * clockMultiplier;
+        waitTime3 = waitTime3 * clockMultiplier;
+        compwaitTime = waitTime * compostSpeedUp;
+        compwaitTime2 = waitTime2 * compostSpeedUp;
+        compwaitTime3 = (waitTime3 * compostSpeedUp);
+        Debug.Log(compwaitTime3);
     }
 
     // Update is called once per frame
@@ -350,7 +361,10 @@ public class growingplant : MonoBehaviour
 
             if (readyCompost.activeInHierarchy)
             {
-                waitTime = waitTime * compostSpeedUp;
+                waitTime = compwaitTime;
+                waitTime2 = compwaitTime2;
+                waitTime3 = compwaitTime3;
+                Debug.Log(waitTime3);
                 compflag.SetActive(true);
                 readyCompost.SetActive(false);
             }
@@ -368,7 +382,9 @@ public class growingplant : MonoBehaviour
                 deadplant.SetActive(false);
                 compflag.SetActive(false);
                 plantIsHere = false;
-
+                flag = 0; 
+                var Vector3 = spawnpoint.transform.position;
+                Instantiate(createdcompost, Vector3, Quaternion.identity);
             }
         }
 
