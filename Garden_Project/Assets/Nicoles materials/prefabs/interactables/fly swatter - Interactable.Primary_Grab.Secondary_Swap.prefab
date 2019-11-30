@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 1375505908148228899}
   m_Layer: 0
   m_Name: fly swatter - Interactable.Primary_Grab.Secondary_Swap
-  m_TagString: Untagged
+  m_TagString: swatter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1039,11 +1039,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: fly+swatter+-+01
       objectReference: {fileID: 0}
-    - target: {fileID: -8890958548609494912, guid: ae50ded63d3a42044941ee1646681653,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: ef6e5e768e07cf645a26f70284aca903, type: 2}
     - target: {fileID: -4216859302048453862, guid: ae50ded63d3a42044941ee1646681653,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1115,6 +1110,11 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -3647987405609537402, guid: ae50ded63d3a42044941ee1646681653,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ef6e5e768e07cf645a26f70284aca903, type: 2}
+    - target: {fileID: -8890958548609494912, guid: ae50ded63d3a42044941ee1646681653,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

@@ -442,6 +442,7 @@ GameObject:
   - component: {fileID: 8038534339243113679}
   - component: {fileID: 4097056850216753946}
   - component: {fileID: 4097056850216753949}
+  - component: {fileID: 1960034043284508640}
   m_Layer: 0
   m_Name: seed
   m_TagString: Untagged
@@ -519,7 +520,7 @@ MeshCollider:
   m_GameObject: {fileID: 4097056850216753947}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
@@ -542,6 +543,19 @@ MonoBehaviour:
   y: 0
   z: 0
   waitTime: 10
+--- !u!65 &1960034043284508640
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4097056850216753947}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12233593, y: 0.13577805, z: 0.0701302}
+  m_Center: {x: -0.034668747, y: 0.0030214312, z: 0.10406934}
 --- !u!1 &4557816314789456130
 GameObject:
   m_ObjectHideFlags: 0

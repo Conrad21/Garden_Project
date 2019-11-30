@@ -28,8 +28,8 @@ public class food : MonoBehaviour
 
 
         timer += Time.deltaTime;
-        Debug.Log("in timer");
-        Debug.Log(timer);
+      //  Debug.Log("in timer");
+     //   Debug.Log(timer);
 
         if( (timer > waitTime/2) && (flag == 0))
         {
@@ -69,7 +69,7 @@ public class food : MonoBehaviour
         if (collision.gameObject.tag == "seed")
         {
             //If the GameObject has the same tag as specified, output this message in the console
-            Debug.Log("Do something else here");
+          //  Debug.Log("Do something else here");
             
             foodLarge.SetActive(true);
             timer = 0.0f;
