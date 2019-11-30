@@ -21,12 +21,19 @@ public class killBug : MonoBehaviour
     {
         timer += Time.deltaTime;
        // Debug.Log("in timer");
-        //Debug.Log(timer);
+        Debug.Log(timer);
 
         if ((timer > waitTime) && (flag == 1))
         {
 
             splat.SetActive(false);
+            flag = 2;
+
+        }
+        if ((timer > waitTime*3) && (flag ==2))
+        {
+
+            bug.SetActive(true);
             flag = 0;
 
         }
