@@ -27,6 +27,7 @@ TagManager:
   - seed_caladium
   - sheer
   - scythe
+  - swatter
   layers:
   - Default
   - TransparentFX
