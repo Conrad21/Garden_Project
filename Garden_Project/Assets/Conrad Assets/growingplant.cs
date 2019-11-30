@@ -8,7 +8,8 @@ public class growingplant : MonoBehaviour
 
     public int clockMultiplier = 1;
     private float compostSpeedUp = 0.75f;
-
+    private float weedslowdown = 1.25f; 
+    public GameObject weed;
     public GameObject compflag; 
     public GameObject cabbage;
     public GameObject littlecab;
@@ -41,10 +42,17 @@ public class growingplant : MonoBehaviour
     public float waitTime = 3.0f;
     public float waitTime2 = 10.0f;
     private float waitTime3 = 60.0f;
+    public float waitTime_1 = 3.0f;
+    public float waitTime2_1 = 10.0f;
+    private float waitTime3_1 = 60.0f;
     private float compwaitTime = 0f;
     private float compwaitTime2 = 0f;
-    private float compwaitTime3 = 0;
+    private float compwaitTime3 = 0f;
+    private float weedwait = 0f;
+    private float weedwait2 = 0f;
+    private float weedwait3 = 0f;
     public float waitwater = 120.0f;
+
     private float timer = 0.0f;
     private float timer2 = 0.0f;
 
@@ -74,6 +82,9 @@ public class growingplant : MonoBehaviour
         compwaitTime = waitTime * compostSpeedUp;
         compwaitTime2 = waitTime2 * compostSpeedUp;
         compwaitTime3 = (waitTime3 * compostSpeedUp);
+        weedwait = waitTime * weedslowdown;
+        weedwait2 = waitTime2 * weedslowdown;
+        weedwait3 = waitTime3 * weedslowdown;
         Debug.Log(compwaitTime3);
     }
 
@@ -122,10 +133,7 @@ public class growingplant : MonoBehaviour
             general3.SetActive(true);
             phase3 = true;
             phase4 = true;
-            //plantGrow();
-            var cubeRenderer = general3.GetComponent<Renderer>();
-            cubeRenderer.material.color = new Color(1, 1, 1);
-
+          
         }
 
         if (timer2 > waitwater && waterflag == false)
@@ -142,8 +150,15 @@ public class growingplant : MonoBehaviour
 
         }
 
+        if(weed.activeInHierarchy)
+        {
+            waitTime = weedwait; 
+            waitTime2 = weedwait2;
+            waitTime3 = weedwait3;
+        }
 
-     
+
+
     }
 
     void OnCollisionEnter(Collision ground)
@@ -328,7 +343,7 @@ public class growingplant : MonoBehaviour
         }
 
 
-        Debug.Log("Something touch the ground");
+       // Debug.Log("Something touch the ground");
 
 
 
@@ -377,6 +392,9 @@ public class growingplant : MonoBehaviour
                 deadplant.SetActive(false);
                 compflag.SetActive(false);
                 plantIsHere = false;
+                waitTime = waitTime_1;
+                waitTime2 = waitTime2_1;
+                waitTime3 = waitTime3_1;
                 flag = 0; 
                 var Vector3 = spawnpoint.transform.position;
                 Instantiate(createdcompost, Vector3, Quaternion.identity);
