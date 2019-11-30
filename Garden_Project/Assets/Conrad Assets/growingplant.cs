@@ -36,6 +36,7 @@ public class growingplant : MonoBehaviour
     public GameObject spawnpoint;
     public GameObject createdcompost;
     public Transform compostTrans;
+    public GameObject compostonshovel;
 
     public float waitTime = 3.0f;
     public float waitTime2 = 10.0f;
@@ -136,19 +137,13 @@ public class growingplant : MonoBehaviour
             general3.SetActive(false);
             deadplant.SetActive(true);
             compflag.SetActive(false);
-
+            flag = 0;
 
 
         }
 
 
-        if (isWatered == false && plantIsAlive == false)
-        {
-          //  var cubeRenderer = general2.GetComponent<Renderer>();
-
-            //Call SetColor using the shader property name "_Color" and setting the color to red
-           // cubeRenderer.material.SetColor("_Color", Color.red);
-        }
+     
     }
 
     void OnCollisionEnter(Collision ground)
@@ -179,7 +174,7 @@ public class growingplant : MonoBehaviour
             hole.SetActive(false);
             plantIsHere = true;
             plantIsAlive = true;
-
+            holeIsHere = false; 
             timer = 0.0f;
             timer2 = 0.0f;
             flag = 1;
@@ -353,7 +348,7 @@ public class growingplant : MonoBehaviour
 
         if (ground.gameObject.tag == "shovel")
         {
-           if(plantIsHere == false && holeIsHere == false)
+           if(plantIsHere == false && holeIsHere == false && !compostonshovel.activeInHierarchy)
             {
                 holeIsHere = true; 
                 hole.SetActive(true);

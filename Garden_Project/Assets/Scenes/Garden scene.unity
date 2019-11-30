@@ -45990,7 +45990,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clockMultiplier: 1
-  compostSpeedUp: 1
   compflag: {fileID: 686428701}
   cabbage: {fileID: 454719010}
   littlecab: {fileID: 382689770}
@@ -46018,9 +46017,9 @@ MonoBehaviour:
   createdcompost: {fileID: 6955510867466284309, guid: 52f43b6d02b9d4d549c181a21526a47e,
     type: 3}
   compostTrans: {fileID: 0}
+  compostonshovel: {fileID: 53727331}
   waitTime: 3
   waitTime2: 10
-  waitTime3: 30
   waitwater: 30
 --- !u!1001 &1656283610
 PrefabInstance:
