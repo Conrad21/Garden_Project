@@ -8,7 +8,9 @@ public class pullweed : MonoBehaviour
     public GameObject weed;
     public float waitTime = 20.0f;
     private float timer = 0.0f;
-    private bool flag = false; 
+    private bool flag = false;
+    public AudioSource snipSource;
+   // public AudioClip snip;
 
     // Start is called before the first frame update
     void Start()
@@ -36,12 +38,13 @@ public class pullweed : MonoBehaviour
     {
 
 
-        if (cutter.gameObject.tag == "sheer")
+        if ((cutter.gameObject.tag == "sheer") &&(weed.activeInHierarchy))
         {
+            snipSource.Play();
             weed.SetActive(false);
             timer = 0.0f;
 
-            weed.SetActive(false);
+           // weed.SetActive(false);
             flag = false; 
         }
     }

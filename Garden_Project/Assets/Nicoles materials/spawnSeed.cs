@@ -10,9 +10,10 @@ public class spawnSeed : MonoBehaviour
     public float x=0;
     public float y =0;
     public float z =0;
-    public float waitTime = 10.0f;
+    public float waitTime = 15.0f;
     private float timer = 0.0f;
-
+    private int limit = 5;
+    private int counter = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,14 +28,12 @@ public class spawnSeed : MonoBehaviour
     public void spawn()
     {
 
-        
-
-
-        if (timer > waitTime)
+        if( (timer > waitTime) )
         {
            
             // seed.SetActive(true);
             Instantiate(seed2, new Vector3(x, y, z), Quaternion.identity);
+            //counter = counter + 1;
             timer = 0;
         }
     }

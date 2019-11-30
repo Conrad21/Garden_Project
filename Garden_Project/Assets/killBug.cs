@@ -21,7 +21,7 @@ public class killBug : MonoBehaviour
     {
         timer += Time.deltaTime;
        // Debug.Log("in timer");
-        Debug.Log(timer);
+        //Debug.Log(timer);
 
         if ((timer > waitTime) && (flag == 1))
         {
