@@ -15,6 +15,7 @@ public class compostBox : MonoBehaviour
     public GameObject compostmed;
     public GameObject compostbig;
     public GameObject shovelcompost;
+    public GameObject NotReadyshovelcompost;
     public GameObject readyShovelcompost;
     private int flag = 0; 
     //  public GameObject compostsound;
@@ -50,7 +51,7 @@ public class compostBox : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
-       if (c.gameObject.tag == "bucket" && (compost1.activeInHierarchy || compost2.activeInHierarchy || compost3.activeInHierarchy))
+       if ((c.gameObject.tag == "bucket") || (c.gameObject.tag == "shovel" && NotReadyshovelcompost.activeInHierarchy) && (compost1.activeInHierarchy || compost2.activeInHierarchy || compost3.activeInHierarchy))
         {
             AudioSourceNew.Play();
             flag = 1; 
@@ -59,8 +60,9 @@ public class compostBox : MonoBehaviour
             compost1.SetActive(false);
             compost2.SetActive(false);
             compost3.SetActive(false);
+            NotReadyshovelcompost.SetActive(false);
 
-          
+
 
         }
 

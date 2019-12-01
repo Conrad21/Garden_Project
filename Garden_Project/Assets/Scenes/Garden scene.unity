@@ -78350,6 +78350,11 @@ PrefabInstance:
       propertyPath: readyShovelcompost
       value: 
       objectReference: {fileID: 5215854221017180992}
+    - target: {fileID: 170070913269954134, guid: a5ff88ba42b547f47a10056fb8f046d2,
+        type: 3}
+      propertyPath: NotReadyshovelcompost
+      value: 
+      objectReference: {fileID: 53727331}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5ff88ba42b547f47a10056fb8f046d2, type: 3}
 --- !u!1 &4800425022487686956
