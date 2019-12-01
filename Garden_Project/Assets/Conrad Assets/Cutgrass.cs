@@ -7,7 +7,7 @@ public class Cutgrass : MonoBehaviour
 
     public int clockMultiplier = 1;
     public GameObject grass;
-    public float waitTime = 20.0f;
+    private float waitTime = 90.0f;
     private float timer = 0.0f;
     public AudioSource snipSource;
 

@@ -18,12 +18,13 @@ public class compostBox : MonoBehaviour
     public GameObject readyShovelcompost;
     private int flag = 0; 
     //  public GameObject compostsound;
-    public int counter = 0;
+    private int counter = 0;
     public AudioClip AudioClip;
-    public AudioSource AudioSource;
+    public AudioSource AudioSourceNew;
+    public AudioSource AudioSourceReady;
 
     private float timer = 0.0f;
-    public float waitTime = 10.0f;
+    private float waitTime = 10.0f;
 
     private int Compostcounter = 0;
 
@@ -51,7 +52,7 @@ public class compostBox : MonoBehaviour
     {
        if (c.gameObject.tag == "bucket" && (compost1.activeInHierarchy || compost2.activeInHierarchy || compost3.activeInHierarchy))
         {
-            AudioSource.Play();
+            AudioSourceNew.Play();
             flag = 1; 
             counter = counter + 1;
             timer = 0.0f;
@@ -65,6 +66,7 @@ public class compostBox : MonoBehaviour
 
         if (c.gameObject.tag == "shovel" && !readyShovelcompost.activeInHierarchy && Compostcounter > 0)
         {
+            AudioSourceNew.Play();
             flag = 1;
             Compostcounter--;
             readyShovelcompost.SetActive(true);
@@ -105,8 +107,9 @@ public class compostBox : MonoBehaviour
         if (counter >= 1 && counter < 3 && (timer > waitTime))
         {
             flag = 0;
-            Debug.Log("hhehehe");
-            counter = counter - 1;
+            // Debug.Log("hhehehe");
+            AudioSourceReady.Play();
+             counter = counter - 1;
             Compostcounter++; 
             Readycompost1.SetActive(true);
      
@@ -117,6 +120,7 @@ public class compostBox : MonoBehaviour
         {
            
             counter = counter - 1;
+            AudioSourceReady.Play();
             Compostcounter++;
             Readycompost1.SetActive(false);
             Readycompost2.SetActive(true);
@@ -130,6 +134,7 @@ public class compostBox : MonoBehaviour
             flag = 0;
             Compostcounter++;
             counter = counter - 1;
+            AudioSourceReady.Play();
             Readycompost1.SetActive(false);
             Readycompost2.SetActive(false);
             Readycompost1.SetActive(true);
@@ -142,7 +147,7 @@ public class compostBox : MonoBehaviour
 
         if (counter == 0)
         {
-            Debug.Log("counter++");
+            //Debug.Log("counter++");
             compostsmall.SetActive(false);
 
         }

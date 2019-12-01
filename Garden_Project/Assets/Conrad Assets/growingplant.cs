@@ -8,8 +8,9 @@ public class growingplant : MonoBehaviour
 
     public int clockMultiplier = 1;
     private float compostSpeedUp = 0.75f;
-    private float weedslowdown = 1.25f; 
-    public GameObject weed;
+    private float weedslowdown = 1.25f;
+    public GameObject weed1;
+    public GameObject weed2;
     public GameObject compflag; 
     public GameObject cabbage;
     public GameObject littlecab;
@@ -36,22 +37,22 @@ public class growingplant : MonoBehaviour
 
     public GameObject spawnpoint;
     public GameObject createdcompost;
-    public Transform compostTrans;
+    //public Transform compostTrans;
     public GameObject compostonshovel;
 
-    public float waitTime = 3.0f;
-    public float waitTime2 = 10.0f;
-    private float waitTime3 = 60.0f;
-    public float waitTime_1 = 3.0f;
-    public float waitTime2_1 = 10.0f;
-    private float waitTime3_1 = 60.0f;
+    private float waitTime = 10.0f;
+    private float waitTime2 = 20.0f;
+    private float waitTime3 = 40.0f;
+    private float waitTime_1 = 10.0f;
+    private float waitTime2_1 = 20.0f;
+    private float waitTime3_1 = 40.0f;
     private float compwaitTime = 0f;
     private float compwaitTime2 = 0f;
     private float compwaitTime3 = 0f;
     private float weedwait = 0f;
     private float weedwait2 = 0f;
     private float weedwait3 = 0f;
-    public float waitwater = 120.0f;
+    private float waitwater = 35.0f;
 
     private float timer = 0.0f;
     private float timer2 = 0.0f;
@@ -85,6 +86,7 @@ public class growingplant : MonoBehaviour
         weedwait = waitTime * weedslowdown;
         weedwait2 = waitTime2 * weedslowdown;
         weedwait3 = waitTime3 * weedslowdown;
+        waitwater = waitwater * clockMultiplier;
         Debug.Log(compwaitTime3);
     }
 
@@ -150,7 +152,7 @@ public class growingplant : MonoBehaviour
 
         }
 
-        if(weed.activeInHierarchy)
+        if((weed1.activeInHierarchy) || (weed2.activeInHierarchy))
         {
             waitTime = weedwait; 
             waitTime2 = weedwait2;

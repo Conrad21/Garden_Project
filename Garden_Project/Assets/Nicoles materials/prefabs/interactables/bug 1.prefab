@@ -459,4 +459,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   splat: {fileID: 3032970627272241929}
   bug: {fileID: 3032970626360372573}
-  waitTime: 5
+  waitTime: 60

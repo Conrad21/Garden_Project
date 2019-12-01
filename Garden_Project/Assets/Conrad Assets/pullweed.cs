@@ -6,7 +6,7 @@ public class pullweed : MonoBehaviour
 {
     public int clockMultiplier = 1;
     public GameObject weed;
-    public float waitTime = 20.0f;
+    private float waitTime = 30.0f;
     private float timer = 0.0f;
     private bool flag = false;
     public AudioSource snipSource;

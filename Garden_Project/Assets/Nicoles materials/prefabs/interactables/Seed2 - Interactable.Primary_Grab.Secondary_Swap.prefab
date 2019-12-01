@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seed: {fileID: 1154928190821629206}
-  waitTime: 30
+  waitTime: 60
 --- !u!1 &1771929751586117931
 GameObject:
   m_ObjectHideFlags: 0

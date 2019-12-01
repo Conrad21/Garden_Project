@@ -105,7 +105,7 @@ public class dirtPot : MonoBehaviour
         if (timer > waitTime2 && phase1 == true && phase3 == false)
         {
 
-            Debug.Log("wait time 2");
+           // Debug.Log("wait time 2");
             general.SetActive(false);
             general2.SetActive(true);
             //plantGrow();
@@ -115,7 +115,7 @@ public class dirtPot : MonoBehaviour
 
         if (timer > waitTime3 && phase3 == false)
         {
-            Debug.Log("wait time 3");
+           // Debug.Log("wait time 3");
             general2.SetActive(false);
             general3.SetActive(true);
             phase3 = true;
@@ -125,7 +125,7 @@ public class dirtPot : MonoBehaviour
 
         if (timer2 > waitwater && waterflag == false)
         {
-            Debug.Log("you did not water the plant :( ");
+         //   Debug.Log("you did not water the plant :( ");
             waterflag = true;
             general2.SetActive(false);
             general.SetActive(false);
@@ -161,7 +161,7 @@ public class dirtPot : MonoBehaviour
 if (ground.gameObject.tag == "seed_blueFlower" && plantIsHere == false && holeIsHere == true)
         {
             //If the GameObject has the same tag as specified, output this message in the console
-            Debug.Log("Blue Seed as been planted");
+         //   Debug.Log("Blue Seed as been planted");
             general = seedling;
             general2 = smalltallblueflower;
             general3 = tallblueflower;
@@ -181,7 +181,7 @@ if (ground.gameObject.tag == "seed_blueFlower" && plantIsHere == false && holeIs
         else if (ground.gameObject.tag == "seed_sunflower" && plantIsHere == false && holeIsHere == true)
         {
             //If the GameObject has the same tag as specified, output this message in the console
-            Debug.Log("Seed as been planted");
+           // Debug.Log("Seed as been planted");
             general = seedling;
             general2 = smallSunflower;
             general3 = sunflower;
@@ -199,7 +199,7 @@ if (ground.gameObject.tag == "seed_blueFlower" && plantIsHere == false && holeIs
         else if (ground.gameObject.tag == "seed_purpleFlower" && plantIsHere == false && holeIsHere == true)
         {
             //If the GameObject has the same tag as specified, output this message in the console
-            Debug.Log("Seed as been planted");
+          //  Debug.Log("Seed as been planted");
             general = seedling;
             general2 = smallpurpleflowers;
             general3 = purpleFlower;
@@ -217,7 +217,7 @@ if (ground.gameObject.tag == "seed_blueFlower" && plantIsHere == false && holeIs
         else if (ground.gameObject.tag == "seed_caladium" && plantIsHere == false && holeIsHere == true)
         {
             //If the GameObject has the same tag as specified, output this message in the console
-            Debug.Log("Seed as been planted");
+        //    Debug.Log("Seed as been planted");
             general = seedling;
             general2 = smallCaladium;
             general3 = caladium;
@@ -244,7 +244,7 @@ if (ground.gameObject.tag == "seed_blueFlower" && plantIsHere == false && holeIs
         if (ground.gameObject.tag == "water")
         {
             //If the GameObject's name matches the one you suggest, output this message in the console
-            Debug.Log("Plant is watered");
+          //  Debug.Log("Plant is watered");
             timer2 = 0.0f;
 
 
@@ -273,7 +273,7 @@ if (ground.gameObject.tag == "seed_blueFlower" && plantIsHere == false && holeIs
 
         if (ground.gameObject.tag == "sheer")
         {
-            Debug.Log("sheers");
+          //  Debug.Log("sheers");
             if (plantIsHere == true)
             {
                 general2.SetActive(false);

@@ -221,4 +221,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   splat: {fileID: 8678839790576511031}
   bug: {fileID: 7010740738027858638, guid: 0189b33c8ef25fa4785f9fdc3508db07, type: 3}
-  waitTime: 5
+  waitTime: 60
