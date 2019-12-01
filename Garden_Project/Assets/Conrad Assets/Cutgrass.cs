@@ -35,7 +35,7 @@ public class Cutgrass : MonoBehaviour
     void OnCollisionEnter(Collision cutter)
     {
         //Debug.Log(cutter.gameObject.tag);
-        if (cutter.gameObject.tag == "scythe")
+        if ((cutter.gameObject.tag == "scythe") && (grass.activeInHierarchy))
         {
             snipSource.Play();
             //Debug.Log("chahahahahaha");

@@ -26,11 +26,11 @@ public class dirtPot : MonoBehaviour
     public Transform compostTrans;
     public GameObject compostonshovel;
 
-    public float waitTime = 3.0f;
-    public float waitTime2 = 10.0f;
+    private float waitTime = 3.0f;
+    private float waitTime2 = 10.0f;
     private float waitTime3 = 60.0f;
-    public float waitTime_1 = 3.0f;
-    public float waitTime2_1 = 10.0f;
+    private float waitTime_1 = 3.0f;
+    private float waitTime2_1 = 10.0f;
     private float waitTime3_1 = 60.0f;
     private float compwaitTime = 0f;
     private float compwaitTime2 = 0f;
@@ -38,7 +38,7 @@ public class dirtPot : MonoBehaviour
     private float weedwait = 0f;
     private float weedwait2 = 0f;
     private float weedwait3 = 0f;
-    public float waitwater = 120.0f;
+    private float waitwater = 120.0f;
 
     private float timer = 0.0f;
     private float timer2 = 0.0f;
@@ -69,6 +69,7 @@ public class dirtPot : MonoBehaviour
         compwaitTime = waitTime * compostSpeedUp;
         compwaitTime2 = waitTime2 * compostSpeedUp;
         compwaitTime3 = (waitTime3 * compostSpeedUp);
+        waitwater = waitwater * clockMultiplier;
         Debug.Log(compwaitTime3);
     }
 
