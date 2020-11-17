@@ -937,6 +937,11 @@ PrefabInstance:
       propertyPath: compostonshovel
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2355283061864023149, guid: 4d0c0a52c0cac294c8a061ca96de8584,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d0c0a52c0cac294c8a061ca96de8584, type: 3}
 --- !u!4 &7960654453913778974 stripped
@@ -1204,6 +1209,11 @@ PrefabInstance:
       propertyPath: compostonshovel
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2355283061864023149, guid: 4d0c0a52c0cac294c8a061ca96de8584,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d0c0a52c0cac294c8a061ca96de8584, type: 3}
 --- !u!4 &5680807674302690705 stripped
@@ -1298,6 +1308,11 @@ PrefabInstance:
         type: 3}
       propertyPath: compostonshovel
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2355283061864023149, guid: 4d0c0a52c0cac294c8a061ca96de8584,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d0c0a52c0cac294c8a061ca96de8584, type: 3}
@@ -1394,6 +1409,11 @@ PrefabInstance:
       propertyPath: compostonshovel
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2355283061864023149, guid: 4d0c0a52c0cac294c8a061ca96de8584,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d0c0a52c0cac294c8a061ca96de8584, type: 3}
 --- !u!4 &5680807674503263081 stripped
@@ -1488,6 +1508,11 @@ PrefabInstance:
         type: 3}
       propertyPath: compostonshovel
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2355283061864023149, guid: 4d0c0a52c0cac294c8a061ca96de8584,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2355283062310146456, guid: 4d0c0a52c0cac294c8a061ca96de8584,
         type: 3}
@@ -1664,6 +1689,11 @@ PrefabInstance:
       propertyPath: compostonshovel
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2355283061864023149, guid: 4d0c0a52c0cac294c8a061ca96de8584,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d0c0a52c0cac294c8a061ca96de8584, type: 3}
 --- !u!4 &5680807674705304661 stripped
@@ -1758,6 +1788,11 @@ PrefabInstance:
         type: 3}
       propertyPath: compostonshovel
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2355283061864023149, guid: 4d0c0a52c0cac294c8a061ca96de8584,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d0c0a52c0cac294c8a061ca96de8584, type: 3}
@@ -2153,6 +2188,11 @@ PrefabInstance:
         type: 3}
       propertyPath: compostonshovel
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2355283061864023149, guid: 4d0c0a52c0cac294c8a061ca96de8584,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d0c0a52c0cac294c8a061ca96de8584, type: 3}
