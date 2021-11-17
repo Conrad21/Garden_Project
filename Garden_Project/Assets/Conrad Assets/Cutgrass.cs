@@ -1,12 +1,11 @@
-﻿  using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Cutgrass : MonoBehaviour
 {
 
     public int clockMultiplier = 1;
     public GameObject grass;
+    public ParticleSystem grasscuttingeffect;
     private float waitTime = 90.0f;
     private float timer = 0.0f;
     public AudioSource snipSource;
@@ -15,6 +14,8 @@ public class Cutgrass : MonoBehaviour
     void Start()
     {
         waitTime = waitTime * clockMultiplier;
+       
+
     }
 
     // Update is called once per frame
@@ -37,9 +38,14 @@ public class Cutgrass : MonoBehaviour
         //Debug.Log(cutter.gameObject.tag);
         if ((cutter.gameObject.tag == "scythe") && (grass.activeInHierarchy))
         {
+
+            grasscuttingeffect.Play();
             snipSource.Play();
             //Debug.Log("chahahahahaha");
+          
+
             grass.SetActive(false);
+            
         }
     }
 
