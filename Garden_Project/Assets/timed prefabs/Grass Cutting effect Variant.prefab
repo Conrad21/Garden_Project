@@ -30,22 +30,22 @@ PrefabInstance:
     - target: {fileID: 2168717793565476168, guid: 53e59a8965ef150419211a0930de7008,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.60937667
+      value: -0.3052342
       objectReference: {fileID: 0}
     - target: {fileID: 2168717793565476168, guid: 53e59a8965ef150419211a0930de7008,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.35008886
+      value: 0.18764655
       objectReference: {fileID: 0}
     - target: {fileID: 2168717793565476168, guid: 53e59a8965ef150419211a0930de7008,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.37588713
+      value: 0.47777215
       objectReference: {fileID: 0}
     - target: {fileID: 2168717793565476168, guid: 53e59a8965ef150419211a0930de7008,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.60399234
+      value: 0.8020939
       objectReference: {fileID: 0}
     - target: {fileID: 2168717793565476168, guid: 53e59a8965ef150419211a0930de7008,
         type: 3}
@@ -55,17 +55,17 @@ PrefabInstance:
     - target: {fileID: 2168717793565476168, guid: 53e59a8965ef150419211a0930de7008,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -92.135994
+      value: -138.013
       objectReference: {fileID: 0}
     - target: {fileID: 2168717793565476168, guid: 53e59a8965ef150419211a0930de7008,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -250.896
+      value: -179.279
       objectReference: {fileID: 0}
     - target: {fileID: 2168717793565476168, guid: 53e59a8965ef150419211a0930de7008,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 312.682
+      value: 241.284
       objectReference: {fileID: 0}
     - target: {fileID: 2168717793565476168, guid: 53e59a8965ef150419211a0930de7008,
         type: 3}
@@ -125,7 +125,7 @@ PrefabInstance:
     - target: {fileID: 2168717793565476170, guid: 53e59a8965ef150419211a0930de7008,
         type: 3}
       propertyPath: ShapeModule.angle
-      value: 50
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 2168717793565476170, guid: 53e59a8965ef150419211a0930de7008,
         type: 3}
@@ -156,6 +156,21 @@ PrefabInstance:
         type: 3}
       propertyPath: looping
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168717793565476170, guid: 53e59a8965ef150419211a0930de7008,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168717793565476170, guid: 53e59a8965ef150419211a0930de7008,
+        type: 3}
+      propertyPath: RotationModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168717793565476170, guid: 53e59a8965ef150419211a0930de7008,
+        type: 3}
+      propertyPath: RotationModule.curve.scalar
+      value: 1.5707963
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53e59a8965ef150419211a0930de7008, type: 3}

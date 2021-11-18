@@ -10,7 +10,8 @@ public class pullweed : MonoBehaviour
     private float timer = 0.0f;
     private bool flag = false;
     public AudioSource snipSource;
-   // public AudioClip snip;
+    public ParticleSystem grasscuttingeffect;
+    // public AudioClip snip;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,8 @@ public class pullweed : MonoBehaviour
 
         if ((cutter.gameObject.tag == "sheer") &&(weed.activeInHierarchy))
         {
+
+            grasscuttingeffect.Play();
             snipSource.Play();
             weed.SetActive(false);
             timer = 0.0f;
