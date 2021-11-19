@@ -339,6 +339,7 @@ public class growingplant : MonoBehaviour
             general2 = smallmushroom;
             general3 = mushroom;
             holeIsHere = false;
+            dirtEffect.Play();
             Destroy(ground.gameObject);
             hole.SetActive(false);
             plantIsHere = true;
@@ -357,6 +358,7 @@ public class growingplant : MonoBehaviour
             general2 = smallBocchoy;
             general3 = Bocchoy;
             holeIsHere = false;
+            dirtEffect.Play();
             Destroy(ground.gameObject);
             hole.SetActive(false);
             plantIsHere = true;
