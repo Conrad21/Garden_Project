@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+
+
 public class Cutgrass : MonoBehaviour
 {
 
@@ -32,17 +34,23 @@ public class Cutgrass : MonoBehaviour
 
         }
     }
+    private float delay = 0;
+
+ 
 
     void OnCollisionEnter(Collision cutter)
     {
         //Debug.Log(cutter.gameObject.tag);
         if ((cutter.gameObject.tag == "scythe") && (grass.activeInHierarchy))
         {
-
+        
+           
             grasscuttingeffect.Play();
+            
+            snipSource.pitch = Random.Range(0.8f, 1.5f);
+            snipSource.volume = Random.Range(0.8f, 1.0f);
             snipSource.Play();
             //Debug.Log("chahahahahaha");
-          
 
             grass.SetActive(false);
             

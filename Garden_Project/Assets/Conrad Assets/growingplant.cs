@@ -39,6 +39,9 @@ public class growingplant : MonoBehaviour
     public GameObject createdcompost;
     //public Transform compostTrans;
     public GameObject compostonshovel;
+    public GameObject waterIcon;
+    public GameObject deathIcon;
+    public ParticleSystem dirtEffect; 
 
     private float waitTime = 10.0f;
     private float waitTime2 = 20.0f;
@@ -114,6 +117,8 @@ public class growingplant : MonoBehaviour
             //plantGrow();
             general.SetActive(true);
             phase1 = true;
+
+ 
         }
 
 
@@ -126,7 +131,10 @@ public class growingplant : MonoBehaviour
             //plantGrow();
 
         }
-
+        if ((timer / waitwater > .5) && waterflag == false)
+        {
+            waterIcon.SetActive(true);
+        }
 
         if (timer > waitTime3 && phase3 == false)
         {
@@ -135,17 +143,25 @@ public class growingplant : MonoBehaviour
             general3.SetActive(true);
             phase3 = true;
             phase4 = true;
-          
+            if (timer / waitwater > .5)
+
+            {
+                waterIcon.SetActive(true);
+            }
         }
+
+   
 
         if (timer2 > waitwater && waterflag == false)
         {
             Debug.Log("you did not water the plant :( ");
             waterflag = true;
             general2.SetActive(false);
+            waterIcon.SetActive(false);
             general.SetActive(false);
             general3.SetActive(false);
             deadplant.SetActive(true);
+            deathIcon.SetActive(true);
             compflag.SetActive(false);
             flag = 0;
 
@@ -188,6 +204,7 @@ public class growingplant : MonoBehaviour
             general3 = cabbage;
 
             Destroy(ground.gameObject);
+            dirtEffect.Play(); 
             hole.SetActive(false);
             plantIsHere = true;
             plantIsAlive = true;
@@ -207,6 +224,7 @@ public class growingplant : MonoBehaviour
             general3 = tallblueflower;
 
             Destroy(ground.gameObject);
+            dirtEffect.Play();
             hole.SetActive(false);
 
             plantIsHere = true;
@@ -226,6 +244,7 @@ public class growingplant : MonoBehaviour
             general3 = Carrot;
 
             Destroy(ground.gameObject);
+            dirtEffect.Play();
             hole.SetActive(false);
             plantIsHere = true;
             plantIsAlive = true;
@@ -245,6 +264,7 @@ public class growingplant : MonoBehaviour
             general3 = pumpkin;
 
             Destroy(ground.gameObject);
+            dirtEffect.Play();
             hole.SetActive(false);
             plantIsHere = true;
             plantIsAlive = true;
@@ -262,6 +282,7 @@ public class growingplant : MonoBehaviour
             general2 = smallSunflower;
             general3 = sunflower;
             holeIsHere = false;
+            dirtEffect.Play();
             Destroy(ground.gameObject);
             hole.SetActive(false);
             plantIsHere = true;
@@ -281,6 +302,7 @@ public class growingplant : MonoBehaviour
             general3 = purpleFlower;
             holeIsHere = false;
             Destroy(ground.gameObject);
+            dirtEffect.Play();
             hole.SetActive(false);
             plantIsHere = true;
             plantIsAlive = true;
@@ -299,6 +321,7 @@ public class growingplant : MonoBehaviour
             general3 = caladium;
             holeIsHere = false;
             Destroy(ground.gameObject);
+            dirtEffect.Play();
             hole.SetActive(false);
             plantIsHere = true;
             plantIsAlive = true;
@@ -358,8 +381,8 @@ public class growingplant : MonoBehaviour
             //If the GameObject's name matches the one you suggest, output this message in the console
             Debug.Log("Plant is watered");
             timer2 = 0.0f;
-
-
+            waterIcon.SetActive(false);
+            waterflag = true; 
         }
 
 
@@ -367,7 +390,8 @@ public class growingplant : MonoBehaviour
         {
            if(plantIsHere == false && holeIsHere == false && !compostonshovel.activeInHierarchy)
             {
-                holeIsHere = true; 
+                holeIsHere = true;
+                dirtEffect.Play();
                 hole.SetActive(true);
             }
 
@@ -388,10 +412,13 @@ public class growingplant : MonoBehaviour
             Debug.Log("sheers");
             if (plantIsHere == true)
             {
+                dirtEffect.Play();
+                waterIcon.SetActive(false);
                 general2.SetActive(false);
                 general.SetActive(false);
                 general3.SetActive(false);
                 deadplant.SetActive(false);
+                deathIcon.SetActive(false);
                 compflag.SetActive(false);
                 plantIsHere = false;
                 waitTime = waitTime_1;
