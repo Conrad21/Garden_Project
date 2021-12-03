@@ -40,6 +40,7 @@ TagManager:
   - User
   - Mounts/tree
   - Shed
+  - Grass
   - 
   - 
   - 
@@ -59,8 +60,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - OutofBounds
   m_SortingLayers:
   - name: Default
     uniqueID: 0

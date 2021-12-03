@@ -17,6 +17,7 @@ public class compostBox : MonoBehaviour
     public GameObject shovelcompost;
     public GameObject NotReadyshovelcompost;
     public GameObject readyShovelcompost;
+    public ParticleSystem dirtEffect;
     private int flag = 0; 
     //  public GameObject compostsound;
     private int counter = 0;
@@ -61,7 +62,7 @@ public class compostBox : MonoBehaviour
             compost2.SetActive(false);
             compost3.SetActive(false);
             NotReadyshovelcompost.SetActive(false);
-
+            dirtEffect.Play();
 
 
         }
@@ -72,6 +73,7 @@ public class compostBox : MonoBehaviour
             flag = 1;
             Compostcounter--;
             readyShovelcompost.SetActive(true);
+            dirtEffect.Play();
         }
     }
 
@@ -82,14 +84,16 @@ public class compostBox : MonoBehaviour
 
         if(Compostcounter < 1)
         {
-       
+
             Readycompost1.SetActive(false);
+   
         }
 
         if (Compostcounter >= 1)
         {
             flag = 0;
             Readycompost1.SetActive(true);
+         
         }
 
         else if (Compostcounter > 4 && Compostcounter < 6)
@@ -97,6 +101,7 @@ public class compostBox : MonoBehaviour
             flag = 0;
             Readycompost1.SetActive(false);
             Readycompost2.SetActive(true);
+            
         }
         else if (Compostcounter >= 6 )
         {
@@ -104,6 +109,7 @@ public class compostBox : MonoBehaviour
             Readycompost1.SetActive(false);
             Readycompost2.SetActive(false);
             Readycompost3.SetActive(true);
+         
         }
 
         if (counter >= 1 && counter < 3 && (timer > waitTime))
@@ -114,13 +120,13 @@ public class compostBox : MonoBehaviour
              counter = counter - 1;
             Compostcounter++; 
             Readycompost1.SetActive(true);
-     
+
             timer = 0.0f;
         }
 
         if (counter >= 3 && counter < 6 && (timer > waitTime))
         {
-           
+            dirtEffect.Play();
             counter = counter - 1;
             AudioSourceReady.Play();
             Compostcounter++;
@@ -133,6 +139,7 @@ public class compostBox : MonoBehaviour
 
         if (counter >= 6 && (timer > waitTime))
         {
+ 
             flag = 0;
             Compostcounter++;
             counter = counter - 1;
@@ -151,13 +158,13 @@ public class compostBox : MonoBehaviour
         {
             //Debug.Log("counter++");
             compostsmall.SetActive(false);
-
+ 
         }
 
 
         if (counter > 0)
         {
-
+         
             //Debug.Log("hehehe");
             compostsmall.SetActive(true);
 
@@ -167,14 +174,14 @@ public class compostBox : MonoBehaviour
         {
             compostsmall.SetActive(false);
             compostmed.SetActive(true);
-
+ 
         }
 
         else if (counter >= 6)
         {
             compostmed.SetActive(false);
             compostbig.SetActive(true);
-
+ 
         }
 
 
